@@ -64,8 +64,28 @@
 (add-to-list 'load-path "/Users/poshboytl/.emacs.d/vendor/rinari")
 (require 'rinari)
 
-;; Rinari
-(add-to-list 'load-path "/Users/poshboytl/.emacs.d/vendor/rhtml")
-(require 'rhtml-mode)
+
+;;nxhtml
+
+
+;; MuMaMo-Mode for rhtml files
+(add-to-list 'load-path "Users/poshboytl/.emacs.d/vendor/nxhtml/util")
+(require 'mumamo-fun)
+(setq mumamo-chunk-coloring 'submode-colored)
+(add-to-list 'auto-mode-alist '("\\.rhtml\\'" . eruby-html-mumamo))
+(add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . eruby-html-mumamo))
+
+
+;;; nxml (HTML ERB template support)
+(load "/Users/poshboytl/.emacs.d/vendor/nxhtml/autostart.el")
+
+(setq
+ nxhtml-global-minor-mode t
+ mumamo-chunk-coloring 'submode-colored
+ nxhtml-skip-welcome t
+ indent-region-mode t
+ rng-nxml-auto-validate-flag nil
+ nxml-degraded t)
+(add-to-list 'auto-mode-alist '("\\.html\\.eco\\.erb\\'" . eruby-nxhtml-mumamo))
 
 

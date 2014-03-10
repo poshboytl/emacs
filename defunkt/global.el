@@ -9,8 +9,8 @@
 (setq gist-view-gist t)
 
 ;; works in both aquamacs and carbon
-(when (functionp 'tool-bar-mode)
-  (tool-bar-mode -1))
+; (when (functionp 'tool-bar-mode)
+;   (tool-bar-mode -1))
 
 ;; aquamacs specific
 (when (boundp 'aquamacs-version)
